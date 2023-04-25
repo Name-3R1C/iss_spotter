@@ -9,7 +9,8 @@
 const request = require('request');
 
 const fetchMyIP = function(callback) {
-  request("https://api.ipify.org?format=json", (error, response, body) => {
+  const url = "https://api.ipify.org?format=json";
+  request(url, (error, response, body) => {
     if (error) {
       return callback(error, null);
     }
@@ -36,7 +37,8 @@ const fetchMyIP = function(callback) {
  *     { latitude: '49.27670', longitude: '-123.13000' }
  */
 const fetchCoordsByIP = function(ip, callback) {
-  request(`http://ipwho.is/${ip}`, (error, response, body) => {
+  const url = `http://ipwho.is/${ip}`;
+  request(url, (error, response, body) => {
     if (error) return callback(error, null);
 
     const coord = JSON.parse(body);

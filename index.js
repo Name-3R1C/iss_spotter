@@ -1,8 +1,6 @@
 const { nextISSTimesForMyLocation } = require('./iss');
 
 const printFlyOverTimes = function(times) {
-  console.log(typeof(times));
-  
   for (const t of times) {
     const datetime = new Date(0);
     datetime.setUTCSeconds(t.risetime);
